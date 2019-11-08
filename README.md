@@ -12,7 +12,7 @@ Main challenges:
 1. gather data: see [deepestcyber/speech](https://github.com/deepestcyber/speech)
    for ways to crawl speech data
 
-2. build dataset: datasets are currently built using [a notebook](/notebooks/build_dataset.ipynb)
+2. build dataset: datasets are currently built using [a notebook](/notebooks/build_datasets.ipynb)
 
 3. augment training data: **TODO**; the idea is to create noisy samples from
    the existing ones; precise offers `precise-add-noise`, we can test this
