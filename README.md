@@ -67,5 +67,24 @@ Meaning:
 
  - `-` is placeholder to show total line width, e.g. `----` means the model is 0% confident
  - `X` shows model confidence, e.g., 'XX--' means model is 50% confident
- - `x` shows configurable cutoff, e.g., `Xx--' means that model is 50% confident but is artificially cutoff by sensitivty parameter
+ - `x` shows configurable cutoff, e.g., `Xx--' means that model is 50% confident but is already in the confident zone via the sensitivity setting
 
+## Sensitity
+
+The `-s` parameter of `precise-listen` influences the chunk activation as follows:
+
+	chunk_activated = prob > 1.0 - self.sensitivity
+
+Where `prob` is the probability returned by the model. Thus, the higher
+the sensitivy, the less the model needs to be sure. The default is 0.5,
+which means that the model needs to be 50% confident that the chunk contains
+the wake word to trigger the chunk. With `-s 0.9` the model only needs to be
+10% confident.
+
+## Trigger level
+
+The trigger level switch `-l` sets the number of consecutive activated
+chunks necessary to trigger a detection of the wake-word. Every processed
+chunk updates an internal counter that decreases the activations. Once
+a chunk is positive, the counter is increased. With `-l N` this needs to
+happen `N` times in a row.
