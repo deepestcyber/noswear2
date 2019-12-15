@@ -52,3 +52,20 @@ Install noswear2:
 3. Run `precise-train`
 4. Run `precise-listen`
 5. Enjoy (YMMV)
+
+
+# precise-listen documentation
+
+Example output of non-basic format:
+
+    XXXXXXXXXXXXXXXXXXXXXxxxxxx---------------------------
+    XXXXXXXXXXXXXXXXXXXXXxxx------------------------------
+    XXXXXXXXXXXXXXX---------------------------------------
+    XXXXXXXXXXXXXXXXXXXXXxxxxxx---------------------------
+
+Meaning:
+
+ - `-` is placeholder to show total line width, e.g. `----` means the model is 0% confident
+ - `X` shows model confidence, e.g., 'XX--' means model is 50% confident
+ - `x` shows configurable cutoff, e.g., `Xx--' means that model is 50% confident but is artificially cutoff by sensitivty parameter
+
