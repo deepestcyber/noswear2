@@ -14,8 +14,7 @@ Main challenges:
 
 2. build dataset: datasets are currently built using [a notebook](/notebooks/build_datasets.ipynb)
 
-3. augment training data: **TODO**; the idea is to create noisy samples from
-   the existing ones; precise offers `precise-add-noise`, we can test this
+3. augment training data: see [Adding noise to the datasets][] for details
 
 4. train model: **TODO**; (we can use `precise-train` for this)
 
