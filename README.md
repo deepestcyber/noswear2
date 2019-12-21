@@ -53,6 +53,20 @@ Install noswear2:
 4. Run `precise-listen`
 5. Enjoy (YMMV)
 
+# Adding noise to the datasets
+
+Example noise augmentation of the `fuck_and_non_swear_balanced` dataset:
+
+	precise-add-noise \
+		${NOSWEAR2_DATA_ROOT}/datasets/fuck_and_non_swear_balanced \
+		${NOSWEAR2_DATA_ROOT}/noswear-noise-samples \
+		-if 3 \
+		${NOSWEAR2_DATA_ROOT}/datasets/fuck_and_non_swear_balanced_noisy_inflated
+
+`-if` is the inflation factor, i.e how many samples are created from one
+sample. Note that the tool will adhere to the train/test split so that there
+is no leakage between train and test. Every sample may have a different noise
+source and noise ratio (which defaults to a random choice between 0.0 and 0.4).
 
 # precise-listen documentation
 
